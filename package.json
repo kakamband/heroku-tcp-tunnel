@@ -17,6 +17,7 @@
     "express": "*",
     "lodash": "^4.17.13",
     "socket.io": "*",
+    "tcp-local-tunnel": "^1.0.6",
     "ws": ">=3.3.1"
   },
   "bugs": {
