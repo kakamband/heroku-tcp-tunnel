@@ -1,16 +1,13 @@
-const express = require('express');
+const http = require('http');
 
+const port = 4000;
 
-
-const serverPort = 3000;
-
-const server = express();
-
-
-
-server.get('/', function(req, res, next) {
-  res.send('ok');
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World');
 });
 
-server.listen(serverPort);
-var servidor= require('http').createServer(servidor);
+server.listen(port, () => {
+  console.log(`Server running at ${port}/`);
+});
