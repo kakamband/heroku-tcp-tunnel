@@ -1,13 +1,7 @@
-const http = require('http');
+const { proxyServer } = require('tcp-local-tunnel')
 
-const port = 3000;
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World');
-});
-
-server.listen(port, () => {
-  console.log(`Server running at ${port}/`);
-});
+proxyServer({
+  proxyPort: 80, // remote port to access exposed local machine
+  tunnelPort: 8010 // tunnel port
+}); 
