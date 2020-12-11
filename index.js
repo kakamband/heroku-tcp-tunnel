@@ -1,4 +1,4 @@
-const { client } = require('tcp-local-tunnel');
+const { proxyServer } = require('tcp-local-tunnel')
 
 proxyServer({
   proxyPort: 80, // remote port to access exposed local machine
